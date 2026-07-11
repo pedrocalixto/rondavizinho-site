@@ -32,7 +32,8 @@ if (-not $ehAdmin) {
     $cmd = "`$env:RONDA_ZIP='$($env:RONDA_ZIP)'; `$env:RONDA_DEST='$($env:RONDA_DEST)'; " +
            "`$env:RONDA_DADOS='$($env:RONDA_DADOS)'; " +
            "`$env:RONDA_SEM_TAREFAS='$($env:RONDA_SEM_TAREFAS)'; irm '$URL_ESTE' | iex"
-    Start-Process powershell -Verb RunAs -ArgumentList "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", $cmd
+    # -NoExit mantem a janela elevada aberta ao fim (o leigo ve o resultado ou o erro)
+    Start-Process powershell -Verb RunAs -ArgumentList "-NoExit", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", $cmd
     return
 }
 
@@ -55,9 +56,11 @@ if (Test-Path $tmpDir) { Remove-Item $tmpDir -Recurse -Force }
 Expand-Archive -Path $tmpZip -DestinationPath $tmpDir -Force
 $raiz = Get-ChildItem $tmpDir -Directory | Select-Object -First 1   # pasta repo-master do zip
 if (Test-Path $dest) {
-    # atualizacao: para as tarefas antes de trocar o codigo
+    # atualizacao: para as tarefas antes de trocar o codigo. cmd /c isola o
+    # schtasks do $ErrorActionPreference='Stop' (se a tarefa nao existe, o erro
+    # nativo derrubaria o script) e engole a saida.
     foreach ($t in "VigiaVizinhanca", "VigiaWeb") {
-        schtasks /End /TN $t 2>$null | Out-Null
+        cmd /c "schtasks /End /TN $t >nul 2>&1"
     }
     Remove-Item $dest -Recurse -Force
 }

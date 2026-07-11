@@ -73,4 +73,7 @@ $argumentos = @("-NoProfile", "-ExecutionPolicy", "Bypass", "-File", (Join-Path 
 if ($env:RONDA_SEM_TAREFAS -eq "1") { $argumentos += "-SemTarefas" }
 if ($env:RONDA_DADOS) { $argumentos += @("-Dados", $env:RONDA_DADOS) }
 & powershell @argumentos
-exit $LASTEXITCODE
+# SEM 'exit' aqui: um exit explicito fecha a janela mesmo com -NoExit, e o
+# usuario perderia a mensagem final / os erros. -NoExit mantem a janela aberta.
+Write-Host ""
+Write-Host "Pode fechar esta janela quando terminar de ler." -ForegroundColor DarkGray

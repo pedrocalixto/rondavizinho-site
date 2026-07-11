@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RondaVizinho — o vigia inteligente da sua rua</title>
+<meta name="description" content="Transforme as câmeras que você já tem num vigia que avisa no seu celular quando atitudes suspeitas são detectadas. Gratuito e de código aberto.">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#topo" class="brand"><img src="assets/icon.svg" alt="">
+      <span class="wordmark">Ronda<b>Vizinho</b></span></a>
+    <div class="links">
+      <a href="#como" class="hide-sm">Como funciona</a>
+      <a href="#detecta" class="hide-sm">O que detecta</a>
+      <a href="#comecar" class="btn btn-ghost">Começar</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="topo">
+  <div class="wrap">
+    <div>
+      <h1>O vigia inteligente <span class="grad">da sua rua</span></h1>
+      <p class="lead">Transforme as câmeras que você já tem num vigia que avisa no
+        seu celular <strong>quando atitudes suspeitas são detectadas</strong>.
+        <span class="destaque">Gratuito e de código aberto.</span></p>
+      <div class="cta">
+        <a href="#comecar" class="btn btn-primary">Quero instalar →</a>
+        <a href="#como" class="btn btn-ghost">Ver como funciona</a>
+      </div>
+      <p class="selo">✓ Sem mensalidade &nbsp; ✓ Suas imagens ficam na sua casa &nbsp; ✓ Usa o DVR que você já tem</p>
+    </div>
+
+    <!-- mockup de um alerta real no Telegram -->
+    <div class="phone" aria-hidden="true">
+      <div class="chat">
+        <div class="hdr">
+          <div class="av">🤖</div>
+          <div><b>RondaVizinho</b><br><span>bot</span></div>
+        </div>
+        <div class="bubble">
+          ⏱️ <b>Vigília (frente · 21:47):</b> pessoa parada há 5 minutos junto ao
+          portão, de moletom com capuz — o rosto está encoberto.
+          <div class="time">21:47</div>
+        </div>
+        <div class="bubble ficha">
+          🧾 <b>Ficha:</b> homem, cerca de 1,75 m, moletom cinza com capuz, calça
+          escura e mochila nas costas. Sem veículo à vista. Fico de olho e te aviso
+          se ele se mexer.
+          <div class="time">21:47</div>
+        </div>
+        <div class="bubble">
+          🔁 <b>Atenção:</b> é a 2ª vez que essa mesma pessoa aparece na última hora.
+          <div class="time">22:14</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="blk" id="problema">
+  <div class="wrap">
+    <h2>Câmera boa não é a que grava tudo.<br>É a que te avisa a hora certa.</h2>
+    <p class="sub">A maioria dos sistemas manda notificação a cada folha que balança.
+      Você desativa o alarme e perde justamente o aviso que importava. O RondaVizinho
+      <strong>entende a cena</strong> e só te chama quando faz sentido.</p>
+  </div>
+</section>
+
+<section class="blk alt" id="detecta">
+  <div class="wrap">
+    <h2>O que ele reconhece</h2>
+    <p class="sub">Uma inteligência artificial olha cada imagem e busca padrões de
+      comportamento — não movimento qualquer.</p>
+    <div class="grid3">
+      <div class="card">
+        <div class="ic">⏱️</div>
+        <h3>Alguém parado</h3>
+        <p>Pessoa ou carro parado em frente à sua casa por minutos — pode ser um
+          entregador, ou alguém observando. Você recebe a foto e decide.</p>
+      </div>
+      <div class="card">
+        <div class="ic">🔁</div>
+        <h3>Rondando</h3>
+        <p>A mesma pessoa ou o mesmo veículo passando várias vezes na última hora.
+          O sistema compara as descrições e percebe o padrão.</p>
+      </div>
+      <div class="card">
+        <div class="ic">🚪</div>
+        <h3>Mexendo no portão</h3>
+        <p>Alguém encostando no portão, no muro ou olhando para dentro da
+          propriedade. O aviso vem com foto e descrição de quem é.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="como">
+  <div class="wrap">
+    <h2>Como funciona</h2>
+    <p class="sub">Sem técnico, sem obra. O RondaVizinho conversa com o seu gravador
+      e manda tudo pro seu Telegram.</p>
+    <div class="passos">
+      <div class="passo">
+        <h3>Rode no que você já tem</h3>
+        <p>O RondaVizinho roda em quase qualquer computador na sua rede: um PC que
+          já fica ligado, um mini-PC ou uma placa de baixo consumo (tipo
+          Raspberry Pi). Tudo fica na sua casa — sem depender de nuvem.</p>
+      </div>
+      <div class="passo">
+        <h3>Segue o assistente</h3>
+        <p>Pelo navegador do celular, um assistente acha seu gravador, testa as
+          câmeras e conecta o seu Telegram — com telas simples, passo a passo.</p>
+      </div>
+      <div class="passo">
+        <h3>Recebe só o que importa</h3>
+        <p>A partir daí, os avisos chegam no seu Telegram com foto e uma descrição
+          em português de quem está lá e o que está fazendo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blk alt">
+  <div class="wrap">
+    <div class="faixa">
+      <div><div class="big">R$ 0/mês</div><p>Sem mensalidade. Utilize seu próprio equipamento.</p></div>
+      <div><div class="big">100% na sua casa</div><p>As imagens ficam com você.</p></div>
+      <div><div class="big">Open source</div><p>Código aberto, licença Apache 2.0.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="comecar">
+  <div class="wrap">
+    <div class="final">
+      <h2>Pronto para deixar sua rua mais segura?</h2>
+      <p>O RondaVizinho é um projeto comunitário, gratuito e aberto. Comece pela
+        documentação no GitHub — e chame um vizinho que manja de computador se
+        travar. Dúvidas e problemas? Abra uma issue.</p>
+      <a href="https://github.com/pedrocalixto/rondavizinho" class="btn btn-primary">Começar no GitHub →</a>
+      <a href="https://github.com/pedrocalixto/rondavizinho/issues" class="btn btn-ghost">Tirar dúvidas</a>
+    </div>
+    <div class="aviso" style="margin-top:2rem">
+      <b>Aviso honesto:</b> o RondaVizinho <b>ajuda</b> a monitorar sua casa, mas
+      <b>não substitui</b> um serviço de monitoramento profissional e é oferecido
+      <b>sem garantia</b>. Ele depende de serviços de terceiros que podem falhar.
+      Aponte suas câmeras para a sua propriedade — respeite a privacidade dos vizinhos.
+      Use por sua conta e risco.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><img src="assets/icon.svg" alt="">
+      <span class="wordmark">Ronda<b>Vizinho</b></span></div>
+    <div>Feito para a vizinhança 🏘️ · Licença Apache 2.0 · Sem fins lucrativos</div>
+  </div>
+</footer>
+
+</body>
+</html>

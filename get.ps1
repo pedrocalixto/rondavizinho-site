@@ -2,9 +2,10 @@
 # No PowerShell (pode ser sem admin; ele pede elevacao sozinho):
 #   irm https://rondavizinho.com.br/get.ps1 | iex
 #
-# O que ele faz: baixa o codigo, extrai para C:\RondaVizinho e roda o
-# instalador (Python + ffmpeg + servico) - ao final abre o assistente no
-# navegador, que acha seu DVR e configura tudo passo a passo.
+# O que ele faz: baixa o codigo, extrai para "Program Files\RondaVizinho" e
+# roda o instalador (Python + ffmpeg + servico) - ao final abre o assistente
+# no navegador, que acha seu DVR e configura tudo passo a passo. (Os DADOS -
+# config e fotos - ficam em ProgramData\Vigia, separados do codigo.)
 #
 # ATENCAO (manutencao): este arquivo e consumido por "irm | iex", que NAO
 # entende BOM nem encoding - mantenha 100%% ASCII (sem acentos).
@@ -16,7 +17,8 @@ $ErrorActionPreference = "Stop"
 $URL_ESTE = "https://rondavizinho.com.br/get.ps1"
 $zipUrl = if ($env:RONDA_ZIP) { $env:RONDA_ZIP }
           else { "https://github.com/pedrocalixto/rondavizinho/archive/refs/heads/master.zip" }
-$dest = if ($env:RONDA_DEST) { $env:RONDA_DEST } else { "C:\RondaVizinho" }
+$dest = if ($env:RONDA_DEST) { $env:RONDA_DEST }
+        else { Join-Path $env:ProgramFiles "RondaVizinho" }
 
 Write-Host ""
 Write-Host "  RondaVizinho - o vigia inteligente da sua rua" -ForegroundColor Blue

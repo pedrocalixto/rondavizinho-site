@@ -16,7 +16,7 @@
 $ErrorActionPreference = "Stop"
 $URL_ESTE = "https://rondavizinho.com.br/get.ps1"
 $zipUrl = if ($env:RONDA_ZIP) { $env:RONDA_ZIP }
-          else { "https://github.com/pedrocalixto/rondavizinho/archive/refs/heads/master.zip" }
+          else { "https://github.com/pedrocalixto/rondavizinho/archive/refs/heads/main.zip" }
 $dest = if ($env:RONDA_DEST) { $env:RONDA_DEST }
         else { Join-Path $env:ProgramFiles "RondaVizinho" }
 

@@ -7,7 +7,7 @@
 # siga o assistente. Variáveis p/ testes: RONDA_ZIP, RONDA_DEST.
 set -euo pipefail
 
-ZIP="${RONDA_ZIP:-https://github.com/pedrocalixto/rondavizinho/archive/refs/heads/master.zip}"
+ZIP="${RONDA_ZIP:-https://github.com/pedrocalixto/rondavizinho/archive/refs/heads/main.zip}"
 DEST="${RONDA_DEST:-/opt/vigia}"
 
 echo
